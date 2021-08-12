@@ -1,0 +1,14 @@
+*.pyc
+*~
+local_settings.py
+__pycache__
+/myvenv
+myvenv
+db.sqlite3
+/static
+.DS_Store
+media
+/sent_emails
+error.log
+info.log
+debug.log

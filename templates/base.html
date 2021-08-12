@@ -1,0 +1,77 @@
+{% load static %}
+<html>
+    <head>
+        <title>Django Girls blog</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        <script src="{% static 'js/global.js' %}"></script>
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    </head>
+    <body>
+        <div class="page-header">
+            <nav  class="navbar navbar-expand-lg navbar-dark">
+                <a class="navbar-brand top-menu" href="/"><i class="fas fa-leaf"></i> MinNature</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    {% if user.is_authenticated %}
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item"><span class="top-menu"><small>| Hello {{ user.username }}</small></span></li>
+                    </ul>
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item"><span class="badge badge-pill"><a href="{% url 'logout' %}" class="top-menu"><i class="fas fa-sign-out-alt"></i></a></span></li>
+                        <li class="nav-item"><span class="badge badge-pill"><a href="{% url 'post_draft_list' %}" class="top-menu"><i class="fas fa-pencil-ruler"></i></a></span></li>
+                        <li class="nav-item"><span class="badge badge-pill"><a href="{% url 'tag_new' %}" class="top-menu"><i class="fas fa-tags"></i></a></span></li>
+                        <li class="nav-item"><span class="badge badge-pill"><a href="{% url 'user_list' %}" class="top-menu"><i class="fas fa-users"></i></a></span></li>
+                        <li class="nav-item"><span class="badge badge-pill"><a href="{% url 'post_new' %}" class="top-menu"><i class="fas fa-plus"></i></a></span></li>
+                    </ul>
+                    {% else %}
+                    <ul class="navbar-nav mr-auto">
+                    </ul>
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item"><span class="badge badge-pill"><a href="{% url 'login' %}" class="top-menu"><i class="fas fa-user"></i></a></span></li>
+                        <li class="nav-item"><span class="badge badge-pill"><a href="{% url 'signup' %}" class="top-menu"><i class="fas fa-user-plus"></i></a></span></li>
+                    {% endif %}
+                        <li class="nav-item"><span class="badge badge-pill"><a href="{% url 'photologue:gallery-list' %}" class="top-menu"><i class="fas fa-images"></i></a></span></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <br>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    {% for message in messages %}
+                        <div class="alert {{ message.tags }} alert-dismissible" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        {{ message }}
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="content container">
+            <div class="row">
+                <div class="col-md-10" style="border-right: 1px solid black;">
+                {% block content %}
+                {% endblock %}
+                </div>
+                <div class="col-md-2">
+                    <a href="{% url 'polls:index' %}">
+                        <h3>Participe do nosso quiz de conhecimentos</h3>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <br>
+        <footer>Copyright 2021 by MinNature. All Rights Reserved.</footer>
+    </body>
+</html>

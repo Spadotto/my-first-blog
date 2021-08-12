@@ -1,0 +1,116 @@
+ERROR (2021-08-11 19:34:08,615) Internal Server Error: /num_users/
+Traceback (most recent call last):
+  File "C:\Users\ellen\Desktop\djangogirls\myvenv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\ellen\Desktop\djangogirls\myvenv\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\ellen\Desktop\djangogirls\myvenv\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\ellen\Desktop\djangogirls\blog\views.py", line 94, in num_users
+    num = CustomUser.objects.count()
+NameError: name 'CustomUser' is not defined
+ERROR (2021-08-11 19:34:08,616) "GET /num_users/ HTTP/1.1" 500 17031
+ERROR (2021-08-11 19:35:37,928) Internal Server Error: /num_users/
+Traceback (most recent call last):
+  File "C:\Users\ellen\Desktop\djangogirls\myvenv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\ellen\Desktop\djangogirls\myvenv\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\ellen\Desktop\djangogirls\myvenv\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\ellen\Desktop\djangogirls\blog\views.py", line 94, in num_users
+    num = CustomUser.objects.count()
+NameError: name 'CustomUser' is not defined
+ERROR (2021-08-11 19:35:37,929) "GET /num_users/ HTTP/1.1" 500 17031
+ERROR (2021-08-11 19:46:36,666) Internal Server Error: /num_users/
+Traceback (most recent call last):
+  File "C:\Users\ellen\Desktop\djangogirls\myvenv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\ellen\Desktop\djangogirls\myvenv\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\ellen\Desktop\djangogirls\myvenv\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\ellen\Desktop\djangogirls\blog\views.py", line 96, in num_users
+    return HttpResponse(num, content_type="text/html")
+NameError: name 'HttpResponse' is not defined
+ERROR (2021-08-11 19:46:36,667) "GET /num_users/ HTTP/1.1" 500 17053
+ERROR (2021-08-11 21:59:14,192) Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\ellen\Desktop\djangogirls\myvenv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\ellen\Desktop\djangogirls\myvenv\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\ellen\Desktop\djangogirls\myvenv\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\ellen\Desktop\djangogirls\blog\views.py", line 18, in post_list
+    return render(request, 'blog/post_list.html', {'posts': posts})
+  File "C:\Users\ellen\Desktop\djangogirls\myvenv\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\ellen\Desktop\djangogirls\myvenv\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\ellen\Desktop\djangogirls\myvenv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\ellen\Desktop\djangogirls\myvenv\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\Users\ellen\Desktop\djangogirls\myvenv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\ellen\Desktop\djangogirls\myvenv\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\ellen\Desktop\djangogirls\myvenv\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Users\ellen\Desktop\djangogirls\myvenv\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "C:\Users\ellen\Desktop\djangogirls\myvenv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\ellen\Desktop\djangogirls\myvenv\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\ellen\Desktop\djangogirls\myvenv\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Users\ellen\Desktop\djangogirls\myvenv\lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\ellen\Desktop\djangogirls\myvenv\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\ellen\Desktop\djangogirls\myvenv\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Users\ellen\Desktop\djangogirls\myvenv\lib\site-packages\django\template\defaulttags.py", line 209, in render
+    nodelist.append(node.render_annotated(context))
+  File "C:\Users\ellen\Desktop\djangogirls\myvenv\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Users\ellen\Desktop\djangogirls\myvenv\lib\site-packages\django\template\defaulttags.py", line 443, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\ellen\Desktop\djangogirls\myvenv\lib\site-packages\django\urls\base.py", line 90, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "C:\Users\ellen\Desktop\djangogirls\myvenv\lib\site-packages\django\urls\resolvers.py", line 610, in _reverse_with_prefix
+    raise ValueError("Don't mix *args and **kwargs in call to reverse()!")
+ValueError: Don't mix *args and **kwargs in call to reverse()!
+ERROR (2021-08-11 21:59:14,194) "GET / HTTP/1.1" 500 169412
+ERROR (2021-08-11 22:47:48,349) Internal Server Error: /post/34/
+Traceback (most recent call last):
+  File "C:\Users\ellen\Desktop\djangogirls\myvenv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\ellen\Desktop\djangogirls\myvenv\lib\site-packages\django\utils\deprecation.py", line 96, in __call__
+    response = self.process_response(request, response)
+  File "C:\Users\ellen\Desktop\djangogirls\myvenv\lib\site-packages\django\middleware\clickjacking.py", line 26, in process_response
+    if response.get('X-Frame-Options') is not None:
+AttributeError: 'tuple' object has no attribute 'get'
+ERROR (2021-08-11 22:47:48,350) "GET /post/34/ HTTP/1.1" 500 63350
+ERROR (2021-08-11 22:47:53,441) Internal Server Error: /post/34/
+Traceback (most recent call last):
+  File "C:\Users\ellen\Desktop\djangogirls\myvenv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\ellen\Desktop\djangogirls\myvenv\lib\site-packages\django\utils\deprecation.py", line 96, in __call__
+    response = self.process_response(request, response)
+  File "C:\Users\ellen\Desktop\djangogirls\myvenv\lib\site-packages\django\middleware\clickjacking.py", line 26, in process_response
+    if response.get('X-Frame-Options') is not None:
+AttributeError: 'tuple' object has no attribute 'get'
+ERROR (2021-08-11 22:47:53,442) "GET /post/34/ HTTP/1.1" 500 63215
+ERROR (2021-08-11 22:48:33,356) Internal Server Error: /post/34/
+Traceback (most recent call last):
+  File "C:\Users\ellen\Desktop\djangogirls\myvenv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\ellen\Desktop\djangogirls\myvenv\lib\site-packages\django\utils\deprecation.py", line 96, in __call__
+    response = self.process_response(request, response)
+  File "C:\Users\ellen\Desktop\djangogirls\myvenv\lib\site-packages\django\middleware\clickjacking.py", line 26, in process_response
+    if response.get('X-Frame-Options') is not None:
+AttributeError: 'tuple' object has no attribute 'get'
+ERROR (2021-08-11 22:48:33,357) "GET /post/34/ HTTP/1.1" 500 63350

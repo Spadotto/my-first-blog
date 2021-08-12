@@ -1,0 +1,38 @@
+{% extends "photologue/root.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "All galleries" %}{% endblock %}
+
+{% block content %}
+
+<div class="container">
+
+    <div>
+        <h1>{% trans "All galleries" %}</h1>
+        <hr/>
+        <br/>
+    </div>
+
+    {% if object_list %}
+        {% for gallery in object_list %}
+            <div>
+                <h2><a href="{{ gallery.get_absolute_url }}">{{ gallery.title }}</a></h2>
+                <p class="muted"><small>{% trans "Published" %} {{ gallery.date_added }}</small></p>
+                {% if gallery.description %}<p>{{ gallery.description|safe }}</p>{% endif %}
+                {% for photo in gallery.sample %}
+                    <a href="{{ photo.get_absolute_url }}">
+                         <img src="{{ photo.get_thumbnail_url }}" class="thumbnail" alt="{{ photo.title }}">
+                    </a>
+                {% endfor %}
+            </div>   
+            <br>
+        {% endfor %}
+    {% else %}
+        <div>{% trans "No galleries were found" %}.</div>
+    {% endif %}
+
+</div>
+
+    {% include "photologue/includes/paginator.html" %}
+    
+{% endblock %}

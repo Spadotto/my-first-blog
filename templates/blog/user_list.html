@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Users</h2>
+    <h5>Quantidade de usuários: <strong><span id="num_users"></span></strong></h5>
+    <br />
+    {% for user in users %}
+        <div class="post">
+            <h3>
+                {{ user.username }} ( {{ user.email }})
+                {% if request.user.is_superuser %}
+                    <small style="margin-left: 15px; ">
+                        <a href="{% url 'user_edit' pk=user.pk %}">
+                            <i class="fas fa-user-edit"></i>
+                        </a>
+                    </small>
+                    <small style="margin-left: 15px;">
+                        <a href="{% url 'user_remove' pk=user.pk %}">
+                            <i class="fas fa-trash"></i>
+                        </a>
+                    </small>
+                    {% endif %}
+            </h3>
+            <hr />
+        </div>
+    {% empty %}
+        <h2>Strange, no users</h2>
+    {% endfor %}
+{% endblock %}
